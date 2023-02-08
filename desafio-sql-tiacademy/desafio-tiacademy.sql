@@ -59,7 +59,7 @@ CREATE TABLE producao.Inspecao(
 );
 
 begin transaction;
-	INSERT INTO producao.TipoProduto(nm_tipo_produto) VALUES
+INSERT INTO producao.TipoProduto(nm_tipo_produto) VALUES
 		('Geladeira'),
 		('Maquina de Lavar'),
 		('Fogao'),
@@ -68,7 +68,7 @@ begin transaction;
 commit;
 
 begin transaction;
-	INSERT INTO producao.Avaliacao(cd_avaliacao, nm_avaliacao) VALUES 
+INSERT INTO producao.Avaliacao(cd_avaliacao, nm_avaliacao) VALUES 
 		('OK', 'Liberado'),
 		('EL', 'Problema Eletrico'),
 		('PT', 'Problema de Pintura'),
@@ -77,7 +77,7 @@ begin transaction;
 commit;
 
 begin transaction;
-	INSERT INTO producao.Inspetor(nm_inspetor) VALUES 
+INSERT INTO producao.Inspetor(nm_inspetor) VALUES 
     	('Roberta Luisa'),
 		('Lucas Cantoni'),
 		('Amanda Novis'),
@@ -86,26 +86,26 @@ begin transaction;
 commit;
 
 begin transaction;
-	INSERT INTO producao.Ficha(dt_inspecao, cd_matricula) VALUES
+INSERT INTO producao.Ficha(dt_inspecao, cd_matricula) VALUES
 		('20221201', 1),
-		('20221211', 1),
-		('20221221', 1),
+		('20221211', 3),
+		('20221221', 5),
 		('20221202', 2),
-		('20221212', 2),
-		('20221222', 2),
-		('20221203', 3),
-		('20221209', 3),
-		('20221213', 3),
-		('20221204', 4),
-		('20221207', 4),
+		('20221212', 4),
+		('20221222', 5),
+		('20221203', 2),
+		('20221209', 4),
+		('20221213', 1),
+		('20221204', 3),
+		('20221207', 2),
 		('20221216', 4),
-		('20221205', 5),
-		('20221213', 5),
+		('20221205', 1),
+		('20221213', 3),
 		('20221219', 5);
 commit;
 
 begin transaction;
-	INSERT INTO producao.Produto(cd_linha_producao, aa_producao, cd_tipo_produto) VALUES
+INSERT INTO producao.Produto(cd_linha_producao, aa_producao, cd_tipo_produto) VALUES
 		( 1, 22, 1),
 		( 1, 22, 1),
 		( 1, 22, 2),
@@ -149,67 +149,67 @@ begin transaction;
 commit;
 
 begin transaction;
-	INSERT INTO producao.Inspecao(cd_ficha, cd_produto, linha_produto, aa_produto, cd_avaliacao, hr_inspecao) VALUES 
-		( 1, 1, 1, 22, 'OK', '09:03'),
-		( 1, 3, 1, 22, 'OK', '09:36'),
-		( 1, 5, 1, 22, 'EL', '10:05'),
+INSERT INTO producao.Inspecao(cd_ficha, cd_produto, linha_produto, aa_produto, cd_avaliacao, hr_inspecao) VALUES 
+		( 1, 1, 1, 22, 'OK', '09:05'),
+		( 1, 3, 1, 22, 'OK', '09:40'),
+		( 1, 5, 1, 22, 'EL', '10:09'),
 		( 1, 7, 1, 22, 'PT', '10:40'),
-		( 4, 9, 1, 22, 'TR', '09:15'),
-		( 4, 2, 1, 22, 'OK', '09:43'),
-		( 4, 4, 1, 22, 'OK', '10:12'),
-		( 4, 6, 1, 22, 'PE', '10:51'), 
-		( 7, 8, 1, 22, 'OK', '09:07'),
-		( 7, 10, 1, 22, 'PE', '09:24'),
-		( 7, 11, 2, 22, 'OK', '09:49'),
-		( 7, 13, 2, 22, 'EL', '10:14'), 
-		( 10, 15, 2, 22, 'OK', '09:10'),
-		( 10, 17, 2, 22, 'OK', '09:36'),
-		( 10, 19, 2, 22, 'OK', '09:58'),
-		( 10, 12, 2, 22, 'PT', '10:25'), 
-		( 13, 14, 2, 22, 'PE', '09:05'),
-		( 13, 16, 2, 22, 'OK', '09:22'),
-		( 13, 18, 2, 22, 'EL', '09:57'),
-		( 13, 20, 2, 22, 'OK', '10:19'), 
-		( 11, 21, 3, 22, 'OK', '09:12'),
-		( 11, 23, 3, 22, 'TR', '09:32'),
-		( 11, 25, 3, 22, 'PT', '10:00'),
-		( 11, 27, 3, 22, 'OK', '10:31'), 
-		( 8, 29, 3, 22, 'EL', '09:04'),
-		( 8, 22, 3, 22, 'OK', '09:27'),
-		( 8, 24, 3, 22, 'PT', '09:53'),
-		( 8, 26, 3, 22, 'OK', '10:25'), 
-		( 2, 28, 3, 22, 'PT', '09:12'),
-		( 2, 30, 3, 22, 'PE', '09:33'),
-		( 2, 31, 4, 22, 'OK', '10:01'),
-		( 2, 33, 4, 22, 'PE', '10:33'), 
-		( 5, 35, 4, 22, 'OK', '09:09'),
-		( 5, 37, 4, 22, 'OK', '09:30'),
-		( 5, 39, 4, 22, 'EL', '10:02'),
-		( 5, 32, 4, 22, 'TR', '10:27'), 
-		( 9, 34, 4, 22, 'EL', '09:11'),
-		( 9, 36, 4, 22, 'OK', '09:37'),
-		( 9, 38, 4, 22, 'PT', '09:59'),
-		( 9, 40, 4, 22, 'OK', '10:19'), 
-		( 14, 5, 1, 22, 'OK', '09:05'),
-		( 14, 7, 1, 22, 'OK', '09:21'),
-		( 14, 9, 1, 22, 'EL', '09:56'),
-		( 14, 6, 1, 22, 'PT', '10:21'), 
-		( 12, 10, 1, 22, 'OK', '09:07'),
-		( 12, 13, 2, 22, 'OK', '09:24'),
-		( 12, 12, 2, 22, 'OK', '09:32'),
-		( 12, 14, 2, 22, 'OK', '09:55'), 
-		( 15, 18, 2, 22, 'PE', '09:11'),
-		( 15, 23, 3, 22, 'EL', '09:37'),
-		( 15, 25, 3, 22, 'OK', '10:00'),
-		( 15, 29, 3, 22, 'OK', '10:13'), 
-		( 3, 24, 3, 22, 'OK', '09:04'),
-		( 3, 28, 3, 22, 'OK', '09:19'),
-		( 3, 30, 3, 22, 'EL', '09:47'),
-		( 3, 33, 4, 22, 'OK', '10:03'), 
-		( 6, 39, 4, 22, 'OK', '09:06'),
-		( 6, 32, 4, 22, 'EL', '09:22'),
-		( 6, 34, 4, 22, 'OK', '09:39'),
-		( 6, 38, 4, 22, 'OK', '09:59');
+		( 2, 28, 3, 22, 'PT', '09:32'),
+		( 2, 30, 3, 22, 'PE', '09:43'),
+		( 2, 31, 4, 22, 'OK', '10:11'),
+		( 2, 33, 4, 22, 'PE', '10:39'),
+		( 3, 24, 3, 22, 'OK', '09:07'),
+		( 3, 28, 3, 22, 'OK', '09:24'),
+		( 3, 30, 3, 22, 'EL', '09:40'),
+		( 3, 33, 4, 22, 'OK', '10:11'), 
+		( 4, 9, 1, 22, 'TR', '09:23'),
+		( 4, 2, 1, 22, 'OK', '09:45'),
+		( 4, 4, 1, 22, 'OK', '10:22'),
+		( 4, 6, 1, 22, 'PE', '10:55'),
+		( 5, 35, 4, 22, 'OK', '09:16'),
+		( 5, 37, 4, 22, 'OK', '09:44'),
+		( 5, 39, 4, 22, 'EL', '10:14'),
+		( 5, 32, 4, 22, 'TR', '10:36'),
+		( 6, 39, 4, 22, 'OK', '09:15'),
+		( 6, 32, 4, 22, 'EL', '09:11'),
+		( 6, 34, 4, 22, 'OK', '09:44'),
+		( 6, 38, 4, 22, 'OK', '09:51'),
+		( 7, 8, 1, 22, 'OK', '09:12'),
+		( 7, 10, 1, 22, 'PE', '09:41'),
+		( 7, 11, 2, 22, 'OK', '09:55'),
+		( 7, 13, 2, 22, 'EL', '10:05'),
+		( 8, 29, 3, 22, 'EL', '09:17'),
+		( 8, 22, 3, 22, 'OK', '09:34'),
+		( 8, 24, 3, 22, 'PT', '09:49'),
+		( 8, 26, 3, 22, 'OK', '10:31'), 
+		( 9, 34, 4, 22, 'EL', '09:19'),
+		( 9, 36, 4, 22, 'OK', '09:44'),
+		( 9, 38, 4, 22, 'PT', '09:50'),
+		( 9, 40, 4, 22, 'OK', '10:22'), 
+		( 10, 15, 2, 22, 'OK', '09:17'),
+		( 10, 17, 2, 22, 'OK', '09:48'),
+		( 10, 19, 2, 22, 'OK', '09:51'),
+		( 10, 12, 2, 22, 'PT', '10:30'),
+		( 11, 21, 3, 22, 'OK', '09:32'),
+		( 11, 23, 3, 22, 'TR', '09:22'),
+		( 11, 25, 3, 22, 'PT', '10:06'),
+		( 11, 27, 3, 22, 'OK', '10:25'),
+		( 12, 10, 1, 22, 'OK', '09:33'),
+		( 12, 13, 2, 22, 'OK', '09:41'),
+		( 12, 12, 2, 22, 'OK', '09:33'),
+		( 12, 14, 2, 22, 'OK', '09:52'), 
+		( 13, 14, 2, 22, 'PE', '09:15'),
+		( 13, 16, 2, 22, 'OK', '09:34'),
+		( 13, 18, 2, 22, 'EL', '09:55'),
+		( 13, 20, 2, 22, 'OK', '10:20'), 
+		( 14, 5, 1, 22, 'OK', '09:09'),
+		( 14, 7, 1, 22, 'OK', '09:29'),
+		( 14, 9, 1, 22, 'EL', '09:49'),
+		( 14, 6, 1, 22, 'PT', '10:29'), 
+		( 15, 18, 2, 22, 'PE', '09:15'),
+		( 15, 23, 3, 22, 'EL', '09:43'),
+		( 15, 25, 3, 22, 'OK', '10:02'),
+		( 15, 29, 3, 22, 'OK', '10:25'); 
 commit;
 
 SELECT CONVERT(VARCHAR(5), DATEADD(minute, DATEDIFF(MINUTE, '09:00', insp.hr_inspecao), 0), 114) as total
@@ -225,13 +225,13 @@ WHERE hr_inspecao IN (
 
 SELECT hr_inspecao as last_time
 FROM producao.inspecao as i
-INNER JOIN producao.ficha as f ON (i.cd_ficha = f.cd_ficha)
-INNER JOIN producao.inspetor as p ON (f.cd_matricula = p.cd_matricula)
+JOIN producao.ficha as f ON (i.cd_ficha = f.cd_ficha)
+JOIN producao.inspetor as p ON (f.cd_matricula = p.cd_matricula)
 WHERE f.dt_inspecao BETWEEN '20221201' and '20221222' AND p.nm_inspetor = 'Trancoso Da Silva';
 
 SELECT cd_avaliacao, COUNT(1) as recorrencia
 FROM producao.inspecao as pi
-INNER JOIN producao.ficha as pf ON (pi.cd_ficha = pf.cd_ficha)
+JOIN producao.ficha as pf ON (pi.cd_ficha = pf.cd_ficha)
 WHERE pf.dt_inspecao BETWEEN CONVERT(datetime, '20221201')
 	AND CONVERT(datetime, '20221222')
 	AND cd_avaliacao != 'OK'
